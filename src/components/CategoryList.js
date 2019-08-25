@@ -1,21 +1,14 @@
 import React,{useEffect} from 'react'
-
 import Category from './Category'
+import categories from '../data/categories'
 
 const styles = {
   backgroundColor: 'lightblue',
   margin: '10px'
 }
 
-const categories = [
-  "Ponies",
-  "Lollipops",
-  "Teddy Bears"
-]
-
 const CategoryList = () => {
   useEffect(() => {
-    console.log("read file")
   }, [])
 
   return (
