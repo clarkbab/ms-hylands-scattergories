@@ -1,5 +1,4 @@
 import React,{useEffect} from 'react'
-import fs from 'fs'
 
 import Category from './Category'
 
@@ -17,10 +16,6 @@ const categories = [
 const CategoryList = () => {
   useEffect(() => {
     console.log("read file")
-    let path = '../data/categories.txt'
-    fs.readFile(path, (e, c) => {
-      console.log(c) 
-    })
   }, [])
 
   return (
