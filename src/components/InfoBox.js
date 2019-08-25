@@ -4,7 +4,7 @@ import Timer from './Timer'
 
 const styles = {
   backgroundColor: 'lightblue',
-  margin: '10px'
+  margin: '10px',
 }
 
 const InfoBox = () => {
