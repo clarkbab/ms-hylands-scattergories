@@ -1,7 +1,7 @@
 import React from 'react'
 
 import InfoBox from './InfoBox'
-import Categories from './Categories'
+import CategoryList from './CategoryList'
 
 const style = {
   backgroundColor: 'lightgray',
@@ -12,7 +12,7 @@ const PageContainer = () => {
   return (
     <div style={style}>
       <InfoBox/>       
-      <Categories/>       
+      <CategoryList/>       
     </div>
   )
 }
