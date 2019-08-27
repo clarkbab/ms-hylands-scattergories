@@ -14,29 +14,30 @@ const period = 5
 var interval
 
 const Timer = () => {
-  console.log('rendering')
   const [paused, setPaused] = useState(true)
-  const [seconds, setSeconds] = useState(period)
+  const [time, setTime] = useState(period)
+  console.log(`render time: ${time}`)
+
+  const startTimer = () => {
+    console.log('starting timer')
+    setPaused(p => false)
+    interval = setInterval(() => {
+      setTime(t => t - 1) 
+    }, 1000)
+  }
+
+  const pauseTimer = () => {
+    console.log('pausing timer')
+    setPaused(p => true)
+    clearInterval(interval)
+  }
 
   // Handles each timer click.
   const clickHandler = () => {
     if (paused) {
-      setPaused(p => false)
-      interval = setInterval(tickHandler, 1000)
+      startTimer()
     } else {
-      setPaused(p => true)
-      clearInterval(interval)
-    }
-  }
-
-  // Handles each timer count.
-  const tickHandler = () => {
-    if (seconds <= 0) {
-      setPaused(p => true)
-      clearInterval(interval)
-      setSeconds(s => period)
-    } else {
-      setSeconds(s => s - 1)
+      pauseTimer()
     }
   }
 
@@ -46,7 +47,7 @@ const Timer = () => {
 
   return (
     <div>
-      <div style={styles} onClick={clickHandler}>{seconds}s</div>
+      <div style={styles} onClick={clickHandler}>{time}s</div>
     </div>
   )
 }
