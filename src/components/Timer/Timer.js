@@ -1,25 +1,22 @@
 import React, { useState } from 'react'
+
+import states from './TimerStates'
+import styles from './TimerStyles'
+import TimerIndicator from '../TimerIndicator/TimerIndicator'
+import TimerReset from '../TimerReset/TimerReset'
 import soundfile from './airhorn.mp3'
-
-const baseStyles = {
-  alignItems: 'center',
-  borderRadius: '50%',
-  display: 'flex',
-  height: '50px',
-  justifyContent: 'center',
-  margin: '0 auto',
-  width: '50px',
-}
-
-const states = {
-  PAUSED: 0,
-  RUNNING: 1,
-  RESET: 2
-}
 
 const startTime = 3
 const resetTime = 2
 var interval
+
+const showReset = (state) => {
+  return state.timerState === states.RUNNING || (state.timerState === states.PAUSED && state.time != startTime)
+}
+
+const playSound = (state) => {
+  return state.timerState === states.RESET
+}
 
 const Timer = () => {
   const [state, setState] = useState({
@@ -47,6 +44,13 @@ const Timer = () => {
   const resetTimer = () => {
     console.log('resetting timer')
     setState(s => ({ ...s, timerState: states.RESET }))
+  }
+
+  // Performs a hard reset of the countdown timer.
+  const hardReset = () => {
+    console.log('hard resetting')
+    pauseTimer()
+    setState(s => ({ ...s, time: startTime }))
   }
 
   // Handles each timer click.
@@ -90,22 +94,11 @@ const Timer = () => {
     })
   }
 
-  // Get background colour.
-  let backColor
-  switch (state.timerState) {
-    case states.PAUSED: backColor = 'pink'; break
-    case states.RUNNING: backColor = 'lightgreen'; break
-    case states.RESET: backColor = 'orange'; break
-    default: break
-  }
-  var styles = Object.assign({ backgroundColor: backColor }, baseStyles)
-
   return (
-    <div>
-      <div style={styles} onClick={clickHandler}>{state.time}s</div>
-      { state.timerState === states.RESET &&
-        <audio src={soundfile} autoPlay />
-      }
+    <div style={styles}>
+      <TimerIndicator time={state.time} timerState={state.timerState} onClick={clickHandler} />
+      { showReset(state) && <TimerReset onClick={hardReset} /> }
+      { playSound(state) && <audio src={soundfile} autoPlay /> }
     </div>
   )
 }

@@ -1,13 +1,12 @@
 import React from 'react'
 
-import Timer from './Timer'
+import Timer from './Timer/Timer'
 
 const styles = {
   backgroundColor: 'lightblue',
-  margin: '10px',
 }
 
-const InfoBox = () => {
+const TimerBox = () => {
   return (
     <div style={styles}>
       <Timer />
@@ -15,4 +14,4 @@ const InfoBox = () => {
   )
 }
 
-export default InfoBox
+export default TimerBox

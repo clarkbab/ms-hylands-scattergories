@@ -1,18 +1,18 @@
 import React from 'react'
 
-import InfoBox from './InfoBox'
-import CategoryList from './CategoryList'
+import TimerBox from './TimerBox'
+import CategoryListContainer from './CategoryListContainer'
 
-const style = {
+const styles = {
   backgroundColor: 'lightgray',
   flex: 1,
 }
 
 const PageContainer = () => {
   return (
-    <div style={style}>
-      <InfoBox/>       
-      <CategoryList/>       
+    <div style={styles}>
+      <TimerBox />       
+      <CategoryListContainer />       
     </div>
   )
 }

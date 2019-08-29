@@ -1,16 +1,14 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import Category from './Category'
 import categories from '../data/categories'
 
 const styles = {
   backgroundColor: 'lightblue',
-  margin: '10px'
+  display: 'inline-block',
+  padding: '20px'
 }
 
 const CategoryList = () => {
-  useEffect(() => {
-  }, [])
-
   return (
     <div style={styles}>
       {
