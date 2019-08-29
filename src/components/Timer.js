@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import soundfile from './airhorn.mp3'
 
 const baseStyles = {
   alignItems: 'center',
@@ -16,8 +17,8 @@ const states = {
   RESET: 2
 }
 
-const startTime = 5
-const resetTime = 1
+const startTime = 3
+const resetTime = 2
 var interval
 
 const Timer = () => {
@@ -26,7 +27,7 @@ const Timer = () => {
     time: startTime,
     resetTime: resetTime
   })
-  console.log(`rendering. time: ${state.time}. resetTime: ${state.resetTime}`)
+  console.log(`rendering. state: ${state.timerState}, time: ${state.time}. resetTime: ${state.resetTime}`)
 
   // Starts the countdown timer.
   const startTimer = () => {
@@ -69,7 +70,7 @@ const Timer = () => {
       switch (s.timerState) {
         case states.RUNNING:
           // If timer is running, count down or reset. 
-          if (s.time > 0) {
+          if (s.time > 1) {
             return { ...s, time: s.time - 1 }
           } else {
             resetTimer()
@@ -102,6 +103,9 @@ const Timer = () => {
   return (
     <div>
       <div style={styles} onClick={clickHandler}>{state.time}s</div>
+      { state.timerState === states.RESET &&
+        <audio src={soundfile} autoPlay />
+      }
     </div>
   )
 }
