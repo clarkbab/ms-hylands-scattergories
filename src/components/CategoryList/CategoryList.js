@@ -1,6 +1,7 @@
 import React from 'react'
-import Category from './Category'
-import categories from '../data/categories'
+
+import Category from '../Category/Category'
+import categories from './categories'
 
 const styles = {
   backgroundColor: 'lightblue',

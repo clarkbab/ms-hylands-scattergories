@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Logo from '../Logo/Logo'
+
 const styles = {
   backgroundColor: 'yellow',
   color: 'red',
@@ -10,7 +12,7 @@ const styles = {
 const Header = () => {
   return (
     <div style={styles}>
-      <div>Header</div>
+      <Logo />
     </div>
   )
 }

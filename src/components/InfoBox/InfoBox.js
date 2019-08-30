@@ -1,9 +1,10 @@
 import React from 'react'
 
-import Info from './Info/Info'
-import NextLetter from './NextLetter/NextLetter'
+import Info from '../Info/Info'
+import Next from '../Next/Next'
 
 const styles = {
+  alignItems: 'center',
   backgroundColor: 'lightblue',
   display: 'flex',
   justifyContent: 'center',
@@ -14,7 +15,7 @@ const InfoBox = (props) => {
   return (
     <div style={styles}>
       <Info letterNum={props.letterNum} />
-      <NextLetter onClick={props.incrementLetterNum} />
+      <Next onClick={props.incrementLetterNum} />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CategoryList from './CategoryList'
+import CategoryList from '../CategoryList/CategoryList'
 
 const styles = {
   backgroundColor: 'lightgreen',

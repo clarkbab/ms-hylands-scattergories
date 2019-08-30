@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import InfoBox from './InfoBox'
-import CategoryListContainer from './CategoryListContainer'
+import InfoBox from '../InfoBox/InfoBox'
+import CategoryListContainer from '../CategoryListContainer/CategoryListContainer'
 
 const styles = {
   backgroundColor: 'lightgray',

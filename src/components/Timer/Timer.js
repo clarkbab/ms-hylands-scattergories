@@ -6,7 +6,7 @@ import TimerIndicator from '../TimerIndicator/TimerIndicator'
 import TimerReset from '../TimerReset/TimerReset'
 import soundfile from './airhorn.mp3'
 
-const startTime = 3
+const startTime = 60
 const resetTime = 2
 var interval
 

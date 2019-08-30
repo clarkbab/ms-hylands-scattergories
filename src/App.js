@@ -1,8 +1,7 @@
 import React from 'react'
-import './App.css'
 
-import Header from './components/Header'
-import PageContainer from './components/PageContainer'
+import Header from './components/Header/Header'
+import PageContainer from './components/PageContainer/PageContainer'
 
 const styles = {
   display: 'flex',
