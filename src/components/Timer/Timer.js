@@ -10,47 +10,49 @@ const startTime = 3
 const resetTime = 2
 var interval
 
-const showReset = (state) => {
-  return state.timerState === states.RUNNING || (state.timerState === states.PAUSED && state.time != startTime)
+const shouldShowReset = (state) => {
+  return state.timerState === states.RUNNING || (state.timerState === states.PAUSED && state.time !== startTime)
 }
 
-const playSound = (state) => {
+const shouldPlaySound = (state) => {
   return state.timerState === states.RESET
 }
 
-const Timer = () => {
+const Timer = (props) => {
   const [state, setState] = useState({
     timerState: states.PAUSED,
     time: startTime,
-    resetTime: resetTime
+    resetTime: resetTime,
+    letterNum: props.letterNum
   })
-  console.log(`rendering. state: ${state.timerState}, time: ${state.time}. resetTime: ${state.resetTime}`)
 
   // Starts the countdown timer.
   const startTimer = () => {
-    console.log('starting timer')
     setState(s => ({ ...s, timerState: states.RUNNING }))
     interval = setInterval(tickHandler, 1000)
   }
 
   // Pauses the countdown timer.
   const pauseTimer = () => {
-    console.log('pausing timer')
     setState(s => ({ ...s, timerState: states.PAUSED }))
     clearInterval(interval)
   }
 
   // Performs the reset stage of the countdown timer.
   const resetTimer = () => {
-    console.log('resetting timer')
     setState(s => ({ ...s, timerState: states.RESET }))
   }
 
   // Performs a hard reset of the countdown timer.
   const hardReset = () => {
-    console.log('hard resetting')
     pauseTimer()
     setState(s => ({ ...s, time: startTime }))
+  }
+
+  // Reset the timer if global reset has been triggered.
+  if (state.letterNum !== props.letterNum) {
+    hardReset()
+    setState(s => ({ ...s, letterNum: props.letterNum }))
   }
 
   // Handles each timer click.
@@ -69,7 +71,6 @@ const Timer = () => {
 
   // Handles each timer tick. 
   const tickHandler = () => {
-    console.log('ticking')
     setState(s => {
       switch (s.timerState) {
         case states.RUNNING:
@@ -97,8 +98,8 @@ const Timer = () => {
   return (
     <div style={styles}>
       <TimerIndicator time={state.time} timerState={state.timerState} onClick={clickHandler} />
-      { showReset(state) && <TimerReset onClick={hardReset} /> }
-      { playSound(state) && <audio src={soundfile} autoPlay /> }
+      { shouldShowReset(state) && <TimerReset onClick={hardReset} /> }
+      { shouldPlaySound(state) && <audio src={soundfile} autoPlay /> }
     </div>
   )
 }

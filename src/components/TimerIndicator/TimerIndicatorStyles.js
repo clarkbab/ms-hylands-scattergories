@@ -5,10 +5,10 @@ const baseStyles = {
   borderRadius: '50%',
   display: 'flex',
   fontWeight: 'lighter',
-  fontSize: '40px',
-  height: '100px',
+  fontSize: '30px',
+  height: '60px',
   justifyContent: 'center',
-  width: '100px',
+  width: '60px',
 }
 
 const styles = (timerState) => {

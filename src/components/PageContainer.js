@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import TimerBox from './TimerBox'
+import InfoBox from './InfoBox'
 import CategoryListContainer from './CategoryListContainer'
 
 const styles = {
@@ -9,10 +9,16 @@ const styles = {
 }
 
 const PageContainer = () => {
+  const [letterNum, setLetterNum] = useState(0)
+
+  const incrementLetterNum = () => {
+    setLetterNum(n => n + 1)
+  }
+  
   return (
     <div style={styles}>
-      <TimerBox />       
-      <CategoryListContainer />       
+      <InfoBox letterNum={letterNum} incrementLetterNum={incrementLetterNum} />       
+      <CategoryListContainer letterNum={letterNum} />       
     </div>
   )
 }

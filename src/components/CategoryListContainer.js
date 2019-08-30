@@ -3,6 +3,9 @@ import React from 'react'
 import CategoryList from './CategoryList'
 
 const styles = {
+  backgroundColor: 'lightgreen',
+  display: 'flex',
+  justifyContent: 'center'
 }
 
 const CategoryListContainer = () => {

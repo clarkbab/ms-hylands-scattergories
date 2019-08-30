@@ -1,8 +1,9 @@
 import React from 'react'
 
 const styles = {
-  color: 'blue',
-  backgroundColor: 'pink'
+  backgroundColor: 'pink',
+  fontSize: '20px',
+  padding: '10px'
 }
 
 const Category = ({name}) => {

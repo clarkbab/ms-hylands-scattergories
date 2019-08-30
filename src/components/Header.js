@@ -8,7 +8,11 @@ const styles = {
 }
 
 const Header = () => {
-  return <div style={styles}>Header</div>
+  return (
+    <div style={styles}>
+      <div>Header</div>
+    </div>
+  )
 }
 
 export default Header
