@@ -2,14 +2,7 @@ import React from 'react'
 
 import Info from '../Info/Info'
 import Next from '../Next/Next'
-
-const styles = {
-  alignItems: 'center',
-  backgroundColor: 'lightblue',
-  display: 'flex',
-  justifyContent: 'center',
-  position: 'relative'
-}
+import styles from './InfoBoxStyles'
 
 const InfoBox = (props) => {
   return (

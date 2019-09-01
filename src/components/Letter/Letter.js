@@ -1,9 +1,6 @@
 import React from 'react'
 
-const styles = {
-  fontSize: '80px',
-  textAlign: 'center'
-}
+import styles from './LetterStyles'
 
 const randomLetter = () => {
   let minCharCode = 65

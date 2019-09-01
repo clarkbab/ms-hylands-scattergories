@@ -1,10 +1,6 @@
 import React from 'react'
 
-const styles = {
-  backgroundColor: 'pink',
-  fontSize: '20px',
-  padding: '10px'
-}
+import styles from './CategoryStyles'
 
 const Category = ({name}) => {
   return <div style={styles}>{name}</div>

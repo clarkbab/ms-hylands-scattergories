@@ -1,11 +1,11 @@
 import React from 'react'
 
-const styles = {
-}
+import logo from './logo.png'
+import styles from './LogoStyles'
 
 const Logo = () => {
   return (
-    <div style={styles}>Ms Hyland's Scattergories</div>
+    <img style={styles} alt="Ms Hyland's Scattergories" src={logo} />
   )
 }
 

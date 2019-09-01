@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
+import CategoryListContainer from './components/CategoryListContainer/CategoryListContainer'
+import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import PageContainer from './components/PageContainer/PageContainer'
+import InfoBox from './components/InfoBox/InfoBox'
+import styles from './AppStyles'
 
-const styles = {
-  display: 'flex',
-  flexDirection: 'column',
-  fontFamily: ['Didactic', 'Helvetica', 'sans-serif'],
-  height: '100vh'
-}
+const App = () => {
+  const [letterNum, setLetterNum] = useState(0)
 
-function App() {
+  const incrementLetterNum = () => {
+    setLetterNum(n => n + 1)
+  }
+
   return (
     <div style={styles}>
       <Header />
-      <PageContainer />
+      <InfoBox letterNum={letterNum} incrementLetterNum={incrementLetterNum} />
+      <CategoryListContainer letterNum={letterNum} />
+      <Footer />
     </div>
   )
 }

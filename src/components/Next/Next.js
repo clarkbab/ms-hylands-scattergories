@@ -1,17 +1,11 @@
 import React from 'react'
 
 import arrow from './arrow.png'
+import styles from './NextStyles'
 
-const styles = {
-  cursor: 'pointer',
-  height: '50%',
-  position: 'absolute',
-  right: '50px'
-}
-
-const Next= (props) => {
+const Next = (props) => {
   return (
-    <img src={arrow} style={styles} onClick={props.onClick} />
+    <img alt='Next Letter' src={arrow} style={styles} onClick={props.onClick} />
   )
 }
 

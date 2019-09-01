@@ -2,12 +2,7 @@ import React from 'react'
 
 import Category from '../Category/Category'
 import categories from './categories'
-
-const styles = {
-  backgroundColor: 'lightblue',
-  display: 'inline-block',
-  padding: '20px'
-}
+import styles from './CategoryListStyles'
 
 const numCategories = 7
 

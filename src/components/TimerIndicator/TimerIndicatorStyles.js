@@ -17,15 +17,15 @@ const styles = (timerState) => {
   let cursor
   switch (timerState) {
     case states.PAUSED: 
-      backgroundColor = 'pink'
+      backgroundColor = '#90EE90'
       cursor = 'pointer'
       break
     case states.RUNNING:
-      backgroundColor = 'lightgreen'
+      backgroundColor = '#FFC0CB'
       cursor = 'pointer'
       break
     case states.RESET:
-      backgroundColor = 'orange'
+      backgroundColor = '#FCC55D'
       cursor = 'auto'
       break
     default: break
