@@ -1,6 +1,7 @@
 
 const styles = {
-  height: '80px'
+  height: '70px',
+  marginLeft: '10px'
 }
 
 export default styles

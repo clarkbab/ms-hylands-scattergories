@@ -1,7 +1,7 @@
 
 const styles = {
   alignItems: 'center',
-  backgroundColor: '#cee8f0',
+  backgroundColor: '#8fd1ee',
   display: 'flex',
   justifyContent: 'center',
   position: 'relative'
