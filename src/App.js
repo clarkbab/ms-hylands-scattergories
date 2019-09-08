@@ -10,7 +10,6 @@ import styles from './AppStyles'
 const App = () => {
   const [letterNum, setLetterNum] = useState(0)
   const [subject, setSubject] = useState(subjects[0])
-  console.log(letterNum)
 
   const incrementLetterNum = () => {
     setLetterNum(n => n + 1)
