@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import styles from './LetterStyles'
 
@@ -9,9 +9,19 @@ const randomLetter = () => {
   return String.fromCharCode(charCode)
 }
 
-const Letter = () => {
+const Letter = (props) => {
+  const [state, setState] = useState({
+    letter: randomLetter(),
+    letterNum: props.letterNum
+  })
+
+  // Change the letter if global reset has been triggered.
+  if (state.letterNum !== props.letterNum) {
+    setState(s => ({ ...s, letterNum: props.letterNum, letter: randomLetter() }))
+  }
+
   return (
-    <div style={styles}>{randomLetter()}</div>
+    <div style={styles}>{state.letter}</div>
   )
 }
 

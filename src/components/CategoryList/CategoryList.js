@@ -1,12 +1,11 @@
 import React from 'react'
 
 import Category from '../Category/Category'
-import categories from './categories'
 import styles from './CategoryListStyles'
 
 const numCategories = 7
 
-// Take n random samples from the array.
+// Take n random samples from the categories array.
 const sample = (array, n) => {
   var shuffled = array.slice(0), i = array.length, temp, index;
   while (i--) {
@@ -18,10 +17,10 @@ const sample = (array, n) => {
   return shuffled.slice(0, n);
 }
 
-const CategoryList = () => {
+const CategoryList = (props) => {
   return (
     <div style={styles}>
-      { sample(categories, numCategories).map((c, i) => <Category key={i} name={c} />) }
+      { sample(props.categories, numCategories).map((c, i) => <Category key={i} name={c} />) }
     </div>
   )
 }
